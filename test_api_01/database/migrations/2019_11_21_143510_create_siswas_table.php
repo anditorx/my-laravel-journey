@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuotesTable extends Migration
+class CreateSiswasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateQuotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('quotes', function (Blueprint $table) {
+        Schema::create('siswas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->text('message');
+            $table->string('nama');
+            $table->string('alamat');
             $table->timestamps();
-
-            $table->foreign('user_id')->refrences('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -30,6 +28,6 @@ class CreateQuotesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quotes');
+        Schema::dropIfExists('siswas');
     }
 }
