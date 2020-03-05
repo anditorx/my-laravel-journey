@@ -1,6 +1,5 @@
 <?php
-
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +12,8 @@ use Illuminate\Http\Request;
 |
 */
 
+
+
+Route::post('login', 'Api\LoginController@action');
 Route::post('register', 'Api\RegisterController@action');
+
